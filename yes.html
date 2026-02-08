@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Love ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      max-width: 350px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      z-index: 10;
+      animation: pop 1s ease;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #e91e63;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      animation: fall 3s linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="us.jpg" alt="Us 💕">
+    <h1>I love you, Asim 💖</h1>
+    <p>
+      You are my best friend,  
+      my forever Valentine,  
+      and my happiest place ❤️
+    </p>
+  </div>
+
+  <script>
+    const colors = ["#e91e63", "#ffeb3b", "#4caf50", "#2196f3", "#ff9800"];
+
+    for (let i = 0; i < 120; i++) {
+      const c = document.createElement("div");
+      c.className = "confetti";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+      document.body.appendChild(c);
+
+      setTimeout(() => c.remove(), 3000);
+    }
+  </script>
+
+</body>
+</html>
